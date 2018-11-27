@@ -197,7 +197,7 @@ function getWeather(request, response) {
     },
 
     cacheMiss: function () {
-      const url = `https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${request.query.data.latitude},${request.query.data.longitude}`;
+      const url = `https://api.darksky.net/forecast/${process.env.DARKSKY_API_KEY}/${request.query.data.latitude},${request.query.data.longitude}`;
 
       return superagent.get(url)
         .then(result => {
@@ -307,9 +307,6 @@ function getTrail(request, response) {
 //Models
 
 //This object constructor designates the information we want to recieve back from the API. As a result of this, the API will return an object with the requested data.
-
-
-
 
 
 
